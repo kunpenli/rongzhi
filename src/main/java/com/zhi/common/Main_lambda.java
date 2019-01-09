@@ -25,7 +25,7 @@ public class Main_lambda {
         list.forEach(Lam2::inst);
         // 调用其他对象的实例方法
         Lam2 lam2_xx = new Lam2();
-        list.forEach(lam2_xx::inst2);// lam2_xx方法调用对象
+        list.forEach(lam2_xx::inst2);// lam2_xx对象调用方法
     }
 }
 @FunctionalInterface
