@@ -33,7 +33,7 @@ class Car {
 
         list.forEach(Car::collide); // 引用静态方法
 
-        list.forEach(Car::repair); // 引用势力方法
+        list.forEach(Car::repair); // 引用实例方法
 
         Car car1 = create(Car::new);
         list.forEach(car1::follow); // 引用其他对象的方法
