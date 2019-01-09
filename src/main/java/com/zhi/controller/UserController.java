@@ -6,6 +6,7 @@ import com.zhi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 import java.util.Map;
@@ -20,5 +21,12 @@ public class UserController {
         List<User> user_list = userService.getAllUser();
         model.put("message","hello"+ JSON.toJSONString(user_list));
         return "test";
+    }
+    @RequestMapping(value="/getUser")
+    @ResponseBody
+    public Object temps(Map<String, Object> model) {
+        List<User> user_list = userService.getAllUser();
+        user_list.forEach(user -> {user.setImgs(null);});
+        return user_list;
     }
 }

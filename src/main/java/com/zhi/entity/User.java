@@ -1,12 +1,17 @@
 package com.zhi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 /**
  * 用户类
  */
 public class User {
     private String id; //
+    @JsonIgnore
     private String name; // 名称
     private String phone; // 电话
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String imgs; // 头像
     private String email; // 电子邮箱
 
