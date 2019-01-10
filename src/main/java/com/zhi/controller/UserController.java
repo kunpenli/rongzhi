@@ -37,7 +37,7 @@ public class UserController {
      * 测试错误页面的跳转
      * @return
      */
-    @RequestMapping(value="/ers")
+    @RequestMapping(value="/erss")
     public String ers() {
         System.out.println(p1);
         int i = 1 / 0;

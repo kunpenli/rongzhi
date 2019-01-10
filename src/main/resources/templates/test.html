@@ -6,6 +6,8 @@
     <title>Title</title>
 </head>
 <body>
-    <span th:text="'Message: ' + ${message}"></span>
+    <h2 th:text="'Message: ' + ${message}"></h2>
+    <!--读取到资源文件-->
+    <h2 th:if="#{roles.manager}=='manager'">管理</h2>
 </body>
 </html>
