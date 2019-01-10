@@ -29,4 +29,16 @@ public class UserController {
         user_list.forEach(user -> {user.setImgs(null);});
         return user_list;
     }
+
+    /**
+     * 测试错误页面的跳转
+     * @return
+     */
+    @RequestMapping(value="/ers")
+    public String ers() {
+        int i = 1 / 0;
+        return "test";
+    }
+    // 测试ajax的跳转
+
 }
