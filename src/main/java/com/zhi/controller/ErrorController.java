@@ -7,19 +7,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
 
 @ControllerAdvice
 public class ErrorController {
     @ExceptionHandler(value = Exception.class)
-    public Object errHand(HttpServletRequest req, HttpServletResponse rep, Exception e, Map<String, Object> modelMap)throws Exception{
+    public Object errHand(HttpServletRequest req, HttpServletResponse rep, Exception e)throws Exception{
         e.printStackTrace();
         if(isAjax(req)) {
             return "error";
         }
-        modelMap.put("message", e.getMessage());
-        modelMap.put("url", req.getRequestURL());
-        return "error";
+        ModelAndView mdv = new ModelAndView();
+        mdv.addObject("message", e.getMessage());
+        mdv.addObject("url", req.getRequestURL());
+        mdv.setViewName("error");
+        return mdv;
     }
 
     public static boolean isAjax(HttpServletRequest req){
