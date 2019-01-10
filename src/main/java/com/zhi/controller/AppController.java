@@ -34,7 +34,7 @@ public class AppController {
         return message;
     }
 
-    @Scheduled(fixedRate = 1000)
+    //@Scheduled(fixedRate = 1000)
     @SendTo("/topic/callback")
     public Object callback() throws Exception {
         // 发现消息
