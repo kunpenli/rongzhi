@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhi.mapper.DeptMapper" >
+  <resultMap id="BaseResultMap" type="com.zhi.entity.Dept" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="dept_name" property="deptName" jdbcType="VARCHAR" />
+    <result column="dept_code" property="deptCode" jdbcType="INTEGER" />
+    <result column="dept_note" property="deptNote" jdbcType="VARCHAR" />
+    <result column="dept_super" property="deptSuper" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

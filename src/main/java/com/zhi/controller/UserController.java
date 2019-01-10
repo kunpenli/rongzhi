@@ -1,6 +1,8 @@
 package com.zhi.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.zhi.entity.Dept;
 import com.zhi.entity.User;
 import com.zhi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,8 @@ public class UserController {
     @RequestMapping(value="/allu")
     public String temp(Map<String, Object> model) {
         List<User> user_list = userService.getAllUser();
-        model.put("message","hello"+ JSON.toJSONString(user_list));
+        List<Dept> dept_list = userService.getAllDept();
+        model.put("message","hello"+ JSON.toJSONString(user_list)+ JSON.toJSONString(dept_list));
         return "test";
     }
     @RequestMapping(value="/getUser")
