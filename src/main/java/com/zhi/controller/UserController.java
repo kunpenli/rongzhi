@@ -25,6 +25,7 @@ public class UserController {
     public String temp(Map<String, Object> model) {
         List<User> user_list = userService.getAllUser();
         List<Dept> dept_list = userService.getAllDept();
+        userService.insertDept();
         model.put("message","hello"+ JSON.toJSONString(user_list)+ JSON.toJSONString(dept_list));
         return "test";
     }
@@ -34,6 +35,12 @@ public class UserController {
         List<User> user_list = userService.getAllUser();
         user_list.forEach(user -> user.setImgs(null));
         return user_list;
+    }
+    @RequestMapping(value="/getDeptPage")
+    @ResponseBody
+    public Object pageDept() {
+        List<Dept> deptList = userService.getPageDept(1, 2);
+        return deptList;
     }
 
     /**

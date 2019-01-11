@@ -9,4 +9,8 @@ public interface UserService {
     List<User> getAllUser();
 
     List<Dept> getAllDept();
+
+    void insertDept();
+
+    List<Dept> getPageDept(Integer pageNo, Integer pageSize);
 }
