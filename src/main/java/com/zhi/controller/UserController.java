@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.zhi.entity.Dept;
 import com.zhi.entity.User;
+import com.zhi.entity.dto.MyLog;
 import com.zhi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,6 +30,7 @@ public class UserController {
         model.put("message","hello"+ JSON.toJSONString(user_list)+ JSON.toJSONString(dept_list));
         return "test";
     }
+    @MyLog(value = "查询用户信息")
     @RequestMapping(value="/getUser")
     @ResponseBody
     public Object temps(Map<String, Object> model) {
