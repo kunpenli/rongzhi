@@ -1,7 +1,7 @@
 package com.zhi.service.serviceimpl;
 
 import com.github.pagehelper.PageHelper;
-import com.zhi.common.RedisUtil;
+import com.zhi.common.RedisOperate;
 import com.zhi.entity.Dept;
 import com.zhi.entity.User;
 import com.zhi.mapper.DeptMapper;
@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
     // 查询类都是SUPPORTS
     // 增删改都是required
     @Autowired
-    private RedisUtil redisUtil;
+    private RedisOperate redisOperate;
     @Resource
     private UserMapper userMapper;
     @Resource
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
     public List<User> getAllUser() {
-        // redisUtil.set("12345678","123");
+        redisOperate.set("aaa", "bbbccc");
         return userMapper.selectUser();
     }
 
