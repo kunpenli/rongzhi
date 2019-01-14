@@ -1,4 +1,4 @@
-package com.zhi.common;
+package com.zhi.common.Lamdba;
 
 /**
  * java8 初试
